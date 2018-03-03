@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Saved</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>User has been saved</h1>
+    <p th:text="'name: ' + ${pwned.name}" />
+    <p th:text="'email: ' + ${pwned.email}" />
+    <br/>
+    <a href="/pwnedcheck">Submit another object</a>
+    <br/>
+    <a href="/pwned/all">See all users</a>
+</body>
+</html>

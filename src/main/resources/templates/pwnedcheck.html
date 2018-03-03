@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add A User</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Add A User</h1>
+  <p>User will be saved to the database if the password in not pwned.</p>
+    <form action="#" th:action="@{/pwnedcheck}" th:object="${pwnedcheck}" method="post">
+    	<!--p>Id: <input type="text" th:field="*{id}" /></p-->
+      <p>Name: <input type="text" th:field="*{name}" /></p>
+      <p>Email: <input type="text" th:field="*{email}" /></p>
+      <p>Password: <input type="text" th:field="*{password}" /></p>
+      <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+
+    <p><a href="/pwned/all">See all users</a></p>
+    <hr/>
+      <a href="https://haveibeenpwned.com/API/v2#PwnedPasswords">Using Pwned Passwords API</a>
+      <br/>
+</body>
+</html>
