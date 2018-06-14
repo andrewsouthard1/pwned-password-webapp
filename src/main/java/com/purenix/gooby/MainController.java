@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import datadog.trace.api.DDTags;
 
 @Controller    // This means that this class is a Controller
 @RequestMapping(path="/pwned") // This means URL's start with /pwned (after Application path)
@@ -41,8 +42,11 @@ public class MainController {
 	}
 
 	@GetMapping(path="/all")
+	@Trace 
 	public @ResponseBody Iterable<User> getAllUsers() {
 		// This returns a JSON or XML with the users
+		Span span = tracer.activeSpan();
+		span.setTags("userTest", "Andrew");
 		return userRepository.findAll();
 	}
 }
