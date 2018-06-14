@@ -64,6 +64,12 @@
     	<version>20180130</version>
 		</dependency>
 
+	<dependency>
+    	<groupId>com.datadoghq</groupId>
+    	<artifactId>dd-trace-api</artifactId>
+    	<version>{version}</version>
+	</dependency>
+
 	</dependencies>
 
 	<build>
